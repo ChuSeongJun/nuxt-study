@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <NuxtLayout>
+    <NuxtPage :page-key="route => route.fullPath" />
+  </NuxtLayout>
 </template>
 
-<script setup ls="ts"></script>
+<script setup lang="ts"></script>
