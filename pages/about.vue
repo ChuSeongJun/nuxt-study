@@ -1,8 +1,8 @@
 <template>
   <q-page padding>
     <div class="q-my-xl text-center">
-      <div class="text-h4">About</div>
-      <p class="q-mt-sm text-grey-8">Vue Master Course 웹은 Nuxt3로 만들어졌습니다.</p>
+      <PageTitle title="About" />
+      <PageDescription description="뷰 마스터 코스는" />
 
       <div class="column">
         <RouterLink to="/">RouterLink Home </RouterLink>

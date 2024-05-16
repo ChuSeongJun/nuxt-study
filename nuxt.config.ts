@@ -2,11 +2,23 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   typescript: {
-    shim: false,
-    typeCheck: true
+    typeCheck: false
   },
   modules: ['nuxt-quasar-ui'],
   quasar: {
-    /* */
+    plugins: ['Notify'],
+    config: {
+      notify: {
+        position: 'top-right'
+      }
+    }
+  },
+  imports: {
+    presets: [
+      {
+        from: 'vue-i18n',
+        imports: ['useI18n']
+      }
+    ]
   }
 });
