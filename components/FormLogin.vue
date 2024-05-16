@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-const { signIn } = useAuth();
+const { signIn } = useAuthStore();
 const emit = defineEmits<{
   success: [];
 }>();
