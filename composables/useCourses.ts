@@ -6,7 +6,7 @@ interface CoursesReturn {
 }
 
 export const useCourses = (): CoursesReturn => {
-  const courses: CourseWithPath[] = coursesData.map(item => ({
+  const courses = coursesData.map(item => ({
     ...item,
     rating: item.rating.toFixed(1), // 5 -> 5.0
     reviewsCount: item.reviewsCount.toLocaleString(), // 1000 -> 1,000

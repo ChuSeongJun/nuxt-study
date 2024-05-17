@@ -1,12 +1,6 @@
-import type { CourseWithPath } from '~/types/course';
+import type { CourseReturn } from '~/types/course';
 
-interface UseCourseReturn {
-  course: Maybe<CourseWithPath>; // Course || null || undefined
-  prevCourse: Maybe<CourseWithPath>;
-  nextCourse: Maybe<CourseWithPath>;
-}
-
-export const useCourse = (courseSlug: string): UseCourseReturn => {
+export const useCourse = (courseSlug: string): CourseReturn => {
   const { courses } = useCourses();
   // const course = courses.find((course) => course.courseSlug === courseSlug);
   const index = courses.findIndex(course => course.courseSlug === courseSlug);
