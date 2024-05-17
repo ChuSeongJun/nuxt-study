@@ -20,5 +20,11 @@ export default defineNuxtConfig({
         imports: ['useI18n']
       }
     ]
+  },
+  app: {
+    head: {
+      title: '넉스트 공부',
+      meta: [{ name: 'description', content: '추성준' }]
+    }
   }
 });
