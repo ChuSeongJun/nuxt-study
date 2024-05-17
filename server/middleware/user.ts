@@ -1,13 +1,8 @@
 import { getUserFromEvent } from '~/server/utils/auth';
 
 export default defineEventHandler(event => {
-  const user = event.context.user;
-
-  if (!user) {
-    return { user: null };
+  const user = getUserFromEvent(event);
+  if (user) {
+    event.context.user = user;
   }
-
-  return {
-    user
-  };
 });
