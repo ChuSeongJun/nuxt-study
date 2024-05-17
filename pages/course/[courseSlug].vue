@@ -57,7 +57,7 @@
 <script setup lang="ts">
 const route = useRoute();
 const courseSlug = route.params.courseSlug as string;
-const { course, prevCourse, nextCourse } = useCourse(courseSlug);
+const { course, prevCourse, nextCourse } = (await useCourse(courseSlug)) || {};
 
 // if (!course) {
 //   throw createError({
@@ -77,9 +77,9 @@ definePageMeta({
   // keepalive: true,
   alias: ['/lecture/:courseSlug'],
   // validate: (route) => {
-  middleware: route => {
+  middleware: async route => {
     const courseSlug = route.params.courseSlug as string;
-    const { course } = useCourse(courseSlug);
+    const { course } = (await useCourse(courseSlug)) || {};
     if (!course) {
       // 1] client: protect, server: 404
       // return false;
